@@ -7,7 +7,7 @@ import Feed from './Feed';
 import UsersNew from './Users/New';
 import EventsList from './Events/List';
 import EventsNew from './Events/New';
-import EventsShow from './Events/Show';
+// import EventsShow from './Events/Show';
 
 
 function App() {
@@ -27,9 +27,11 @@ function App() {
               <Route path="/events/new" exact>
                   <EventsNew />
               </Route>
+              {/*
               <Route path="/events/:event_id" exact>
                   <EventsShow />
               </Route>
+              */}
           </Switch>
       </Container>
   );
