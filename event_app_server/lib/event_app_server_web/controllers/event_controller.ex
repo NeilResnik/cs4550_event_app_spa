@@ -8,6 +8,7 @@ defmodule EventAppServerWeb.EventController do
 
   def index(conn, _params) do
     events = Events.list_events()
+    IO.inspect events
     render(conn, "index.json", events: events)
   end
 
