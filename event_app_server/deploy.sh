@@ -6,7 +6,7 @@ export MIX_ENV=prod
 # on is something like 1025-32767
 export PORT=4795
 export SECRET_KEY_BASE=insecure
-export DATABASE_URL=ecto://event_app_spa:bad@localhost/event_app_prod
+export DATABASE_URL=ecto://event_app_spa:bad@localhost/event_app_spa_prod
 
 mix deps.get --only prod
 mix compile
@@ -29,13 +29,13 @@ SECRET_KEY_BASE=$(cat "$CFGD/base")
 export SECRET_KEY_BASE
 
 DB_PASS=$(cat "$CFGD/db_pass")
-export DATABASE_URL=ecto://event_app_spa:$DB_PASS@localhost/event_app_prod
+export DATABASE_URL=ecto://event_app_spa:$DB_PASS@localhost/event_app_spa_prod
 
 mix ecto.create
 mix ecto.migrate
 
-npm install --prefix ./assets
-npm run deploy --prefix ./assets
+# npm install --prefix ./assets
+# npm run deploy --prefix ./assets
 mix phx.digest
 
 mix release
